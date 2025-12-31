@@ -470,6 +470,21 @@
     margin-bottom: 25px;
 }
 
+/* 手機版：住宿卡片改為單欄 */
+@media (max-width: 768px) {
+    .accommodation-compact {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .accommodation-compact {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+}
+
 .acc-card {
     padding: 25px;
     border: 3px solid rgba(0,125,199,0.4);
@@ -570,6 +585,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+}
+
+/* 手機版：提醒卡片改為單欄 */
+@media (max-width: 768px) {
+    .tips-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tips-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
 }
 
 .tip-card {
