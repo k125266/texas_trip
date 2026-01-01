@@ -1,4 +1,70 @@
 /* 總覽頁面 */
+.airport-hero {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 83, 188, 0.4);
+    border: 3px solid #0053BC;
+}
+
+.airport-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.airport-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 43, 92, 0.95) 0%, rgba(0, 43, 92, 0.7) 70%, transparent 100%);
+    padding: 30px;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.airport-hero:hover .airport-overlay {
+    background: linear-gradient(to top, rgba(0, 83, 188, 0.95) 0%, rgba(0, 83, 188, 0.7) 70%, transparent 100%);
+}
+
+.airport-overlay h2 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.airport-overlay p {
+    font-size: 1.1em;
+    color: #BBC4CA;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .airport-hero {
+        height: 200px;
+    }
+    
+    .airport-overlay {
+        padding: 20px;
+    }
+    
+    .airport-overlay h2 {
+        font-size: 1.3em;
+    }
+    
+    .airport-overlay p {
+        font-size: 0.95em;
+    }
+}
+
 .compact-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
