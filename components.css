@@ -2,6 +2,7 @@
 .airport-hero {
     position: relative;
     width: 100%;
+    max-width: 100%;
     height: 320px;
     border-radius: 30px;
     overflow: hidden;
@@ -79,6 +80,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 25px;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* 手機版：總覽卡片改為單欄 */
@@ -263,6 +266,8 @@
     box-shadow: 0 15px 40px rgba(0, 83, 188, 0.4);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .budget-display::before {
@@ -288,6 +293,7 @@
 .budget-compact {
     max-width: 700px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .budget-row {
@@ -333,6 +339,8 @@
     grid-template-columns: repeat(8, 1fr);
     gap: 12px;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* 手機版：行程按鈕調整 */
@@ -447,8 +455,9 @@
 }
 
 .day-details {
-    height: calc(100vh - 300px);
+    max-height: 70vh;
     overflow-y: auto;
+    overflow-x: hidden;
     padding-right: 10px;
 }
 
@@ -461,6 +470,8 @@
     border: 3px solid rgba(0, 83, 188, 0.6);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .day-header-section::before {
@@ -518,6 +529,9 @@
 .timeline-container {
     position: relative;
     padding-left: 80px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .timeline-item {
@@ -745,6 +759,10 @@
     border-radius: 15px;
     border: 3px solid #0053BC;
     box-shadow: 0 8px 25px rgba(0, 83, 188, 0.6);
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .day-budget-footer span:first-child {
@@ -766,6 +784,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-bottom: 25px;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* 手機版：住宿卡片改為單欄 */
@@ -896,6 +916,8 @@
     animation: total-pulse 3s ease-in-out infinite;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .total-acc::before {
@@ -924,6 +946,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* 手機版：提醒卡片改為單欄 */
