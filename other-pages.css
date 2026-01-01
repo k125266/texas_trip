@@ -1,0 +1,89 @@
+/* 住宿頁面 */
+.accommodation-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.acc-card {
+    background: linear-gradient(135deg, rgba(0, 43, 92, 0.6) 0%, rgba(0, 43, 92, 0.4) 100%);
+    border: 2px solid rgba(0, 83, 188, 0.4);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s;
+}
+
+.acc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 83, 188, 0.5);
+    border-color: var(--mavs-royal-blue);
+}
+
+.acc-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #FFA500;
+}
+
+.acc-card p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.price-tag {
+    color: #FFA500;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.total-acc {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--mavs-royal-blue) 0%, rgba(0, 83, 188, 0.8) 100%);
+    border-radius: 15px;
+    color: #FFA500;
+}
+
+/* 提醒頁面 */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tip-card {
+    background: linear-gradient(135deg, rgba(0, 43, 92, 0.6) 0%, rgba(0, 43, 92, 0.4) 100%);
+    border: 2px solid rgba(0, 83, 188, 0.4);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 83, 188, 0.5);
+    border-color: var(--mavs-royal-blue);
+}
+
+.tip-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.tip-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #FFA500;
+}
+
+.tip-card p {
+    color: var(--mavs-silver);
+    line-height: 1.8;
+}
