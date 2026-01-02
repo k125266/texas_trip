@@ -37,7 +37,7 @@ function showTab(tabName) {
 const dayData = {
     1: {
         activities: [
-            { time: '19:20', title: '✈️ 抵達 DFW 機場', desc: '租車取車', price: '' },
+            { time: '19:20', title: '<img src="https://cdn-icons-png.flaticon.com/512/12142/12142421.png" alt="Airplane" class="basketball-icon"> 抵達 DFW 機場', desc: '租車取車', price: '' },
             { time: '20:00', title: '🚗 前往住宿', desc: '開車 30-35 分鐘 (30 km) 至 1555 Elm St<br>市中心高層景觀,附免費車庫', price: '' },
             { time: '21:00', title: '🛒 Tom Thumb 超市', desc: '📍 2380 N Field St(車程 5-7 分鐘 / 2 km)<br>🕐 營業時間 06:00-23:00<br>採買早餐、飲料、水果、簡餐', price: 'NT$300-500' }
         ],
@@ -101,7 +101,7 @@ const dayData = {
             { time: '11:30-13:00', title: '🎮 Pinballz 彈珠台', desc: '📍 8940 Research Blvd, Austin<br>免費入場,代幣制遊戲', price: '代幣 $10-15 ≈ NTD 320-480' },
             { time: '14:00-17:30', title: '🛍️ Grapevine Mills', desc: '🚗 車程 3 小時<br>購物 & 早晚餐,停車免費', price: 'NTD 500-800' },
             { time: '19:30', title: '🚗 出發前往 DFW', desc: '25 分鐘車程', price: '' },
-            { time: '22:50', title: '✈️ 返台', desc: '<strong>長榮 BR53 起飛</strong><br>3/7 抵達台北', price: '', isReturn: true }
+            { time: '22:50', title: '<img src="https://cdn-icons-png.flaticon.com/512/12142/12142421.png" alt="Airplane" class="basketball-icon"> 返台', desc: '<strong>長榮 BR53 起飛</strong><br>3/7 抵達台北', price: '', isReturn: true }
         ],
         budget: 'NTD 1,800'
     }
