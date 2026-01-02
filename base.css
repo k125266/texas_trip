@@ -169,13 +169,61 @@ body {
 
 /* 手機版基礎響應式 */
 @media (max-width: 768px) {
-    .app-container { 
-        padding: 20px; 
+    .app-container {
+        padding: 20px;
+    }
+
+    /* 手機版動畫距離較短 */
+    .scroll-reveal {
+        transform: translateY(30px);
+    }
+    .scroll-reveal-left {
+        transform: translateX(-30px);
+    }
+    .scroll-reveal-right {
+        transform: translateX(30px);
     }
 }
 
 @media (max-width: 480px) {
-    .app-container { 
-        padding: 15px; 
+    .app-container {
+        padding: 15px;
+    }
+
+    /* 小螢幕動畫更細膩 */
+    .scroll-reveal {
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .scroll-reveal-left {
+        transform: translateX(-20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .scroll-reveal-right {
+        transform: translateX(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .scroll-reveal-scale {
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+}
+
+/* 尊重用戶的動畫偏好設定 */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .scroll-reveal-left,
+    .scroll-reveal-right,
+    .scroll-reveal-scale {
+        opacity: 0;
+        transform: none;
+        transition: opacity 0.3s ease-out;
+    }
+
+    .scroll-reveal.revealed,
+    .scroll-reveal-left.revealed,
+    .scroll-reveal-right.revealed,
+    .scroll-reveal-scale.revealed {
+        opacity: 1;
+        transform: none;
     }
 }
