@@ -193,6 +193,148 @@
     font-weight: bold;
 }
 
+/* 統計卡片樣式 */
+.stat-card .card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #FFA500;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(255, 165, 0, 0.5);
+}
+
+.stat-unit {
+    font-size: 0.5em;
+    color: var(--mavs-silver);
+    margin-left: 3px;
+    margin-right: 8px;
+}
+
+/* 旅程時間軸 */
+.trip-timeline {
+    background: linear-gradient(135deg, rgba(0, 43, 92, 0.6) 0%, rgba(0, 43, 92, 0.4) 100%);
+    border: 2px solid rgba(0, 83, 188, 0.4);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.trip-timeline h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--mavs-royal-blue);
+}
+
+.timeline-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.timeline-item {
+    flex: 1;
+    background: rgba(0, 83, 188, 0.2);
+    border: 2px solid rgba(0, 83, 188, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.timeline-item:hover {
+    background: rgba(0, 83, 188, 0.35);
+    border-color: var(--mavs-royal-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 83, 188, 0.5);
+}
+
+.timeline-days {
+    font-size: 1.1em;
+    color: var(--mavs-silver);
+    margin-bottom: 8px;
+}
+
+.timeline-city {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #FFA500;
+    margin-bottom: 8px;
+}
+
+.timeline-highlight {
+    font-size: 0.95em;
+    color: #fff;
+}
+
+.timeline-arrow {
+    font-size: 1.5em;
+    color: var(--mavs-royal-blue);
+    font-weight: bold;
+}
+
+/* 天氣提醒 */
+.weather-reminder {
+    background: linear-gradient(135deg, rgba(0, 43, 92, 0.6) 0%, rgba(0, 43, 92, 0.4) 100%);
+    border: 2px solid rgba(0, 83, 188, 0.4);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.weather-reminder h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--mavs-royal-blue);
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.weather-item {
+    background: rgba(0, 83, 188, 0.2);
+    border: 2px solid rgba(0, 83, 188, 0.4);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.weather-item:hover {
+    background: rgba(0, 83, 188, 0.35);
+    border-color: var(--mavs-royal-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 83, 188, 0.5);
+}
+
+.weather-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.weather-label {
+    font-size: 1.1em;
+    color: var(--mavs-silver);
+    margin-bottom: 10px;
+}
+
+.weather-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFA500;
+}
+
 /* 手機版響應式 */
 @media (max-width: 768px) {
     .tab-nav {
@@ -244,6 +386,59 @@
         padding: 12px 15px;
     }
     .budget-row.total {
+        font-size: 1.1em;
+    }
+
+    /* 統計卡片 */
+    .stat-number {
+        font-size: 2em;
+    }
+
+    /* 旅程時間軸 */
+    .trip-timeline {
+        padding: 20px;
+    }
+    .trip-timeline h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .timeline-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .timeline-arrow {
+        transform: rotate(90deg);
+        font-size: 1.2em;
+    }
+    .timeline-days {
+        font-size: 1em;
+    }
+    .timeline-city {
+        font-size: 1.5em;
+    }
+    .timeline-highlight {
+        font-size: 0.9em;
+    }
+
+    /* 天氣提醒 */
+    .weather-reminder {
+        padding: 20px;
+    }
+    .weather-reminder h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .weather-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .weather-icon {
+        font-size: 2.5em;
+    }
+    .weather-label {
+        font-size: 1em;
+    }
+    .weather-value {
         font-size: 1.1em;
     }
 }
@@ -302,6 +497,61 @@
     .budget-row.total {
         font-size: 1em;
         margin-top: 10px;
+    }
+
+    /* 統計卡片 */
+    .stat-number {
+        font-size: 1.8em;
+    }
+    .stat-unit {
+        font-size: 0.45em;
+    }
+
+    /* 旅程時間軸 */
+    .trip-timeline {
+        padding: 15px;
+    }
+    .trip-timeline h2 {
+        font-size: 1.3em;
+        margin-bottom: 12px;
+    }
+    .timeline-item {
+        padding: 15px;
+    }
+    .timeline-days {
+        font-size: 0.9em;
+    }
+    .timeline-city {
+        font-size: 1.3em;
+    }
+    .timeline-highlight {
+        font-size: 0.85em;
+    }
+    .timeline-arrow {
+        font-size: 1em;
+    }
+
+    /* 天氣提醒 */
+    .weather-reminder {
+        padding: 15px;
+    }
+    .weather-reminder h2 {
+        font-size: 1.3em;
+        margin-bottom: 12px;
+    }
+    .weather-item {
+        padding: 20px;
+    }
+    .weather-icon {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    .weather-label {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+    .weather-value {
+        font-size: 1em;
     }
 }
 
