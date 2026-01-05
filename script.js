@@ -283,3 +283,48 @@ function renderPage(day) {
     nextBtn.style.opacity = day === 8 ? '0.3' : '1';
     nextBtn.style.pointerEvents = day === 8 ? 'none' : 'auto';
 }
+
+// ========== 待辦清單功能 ==========
+
+// 從 localStorage 讀取勾選狀態
+function loadChecklistState() {
+    const savedState = localStorage.getItem('texasTripChecklist');
+    if (savedState) {
+        const checkedItems = JSON.parse(savedState);
+        checkedItems.forEach(taskId => {
+            const checkbox = document.getElementById(taskId);
+            if (checkbox) {
+                checkbox.checked = true;
+            }
+        });
+    }
+}
+
+// 儲存勾選狀態到 localStorage
+function saveChecklistState() {
+    const checkboxes = document.querySelectorAll('.checklist-checkbox');
+    const checkedItems = [];
+
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            checkedItems.push(checkbox.id);
+        }
+    });
+
+    localStorage.setItem('texasTripChecklist', JSON.stringify(checkedItems));
+}
+
+// 初始化待辦清單功能
+function initChecklist() {
+    // 載入已儲存的狀態
+    loadChecklistState();
+
+    // 為所有 checkbox 添加事件監聽器
+    const checkboxes = document.querySelectorAll('.checklist-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', saveChecklistState);
+    });
+}
+
+// 當 DOM 載入完成後初始化
+document.addEventListener('DOMContentLoaded', initChecklist);
