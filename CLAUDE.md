@@ -2,7 +2,7 @@
 
 > 德州8天7夜籃球主題自駕遊 · 單頁應用程式 · 日系柔和配色
 
-**Version**: 2.1 | **Last Updated**: 2026-01-04
+**Version**: 2.2 | **Last Updated**: 2026-01-05
 
 ---
 
@@ -704,6 +704,28 @@ This approach resolves the "too blue/too heavy" (太藍太沈重) feedback while
 
 ---
 
-**Last Updated**: 2026-01-04
-**Version**: 2.1 (UI Contrast & Accessibility Refinements)
+## 📝 Version History
+
+### **Version 2.2** (2026-01-05) - Interactive Travel Planning Features
+**新增功能：**
+- ✨ **翻書模式**：實現全螢幕行程瀏覽，支援左右方向鍵切換、ESC 關閉
+- ✅ **行前準備清單**：11 項互動式待辦事項，支援勾選與 localStorage 狀態保存
+- 🎒 **行李打包清單**：5 大類別（證件、衣物、電子、生活、特殊），每項包含針對行程的特別說明
+- 💡 **重要提醒卡片**：NBA Clear Bag Policy、乾燥氣候對策、車內導航建議
+
+**檔案變更：**
+- `index.html`: 新增翻書介面、準備清單、打包清單 HTML 結構
+- `script.js`: 新增翻書模式邏輯、鍵盤導航、清單狀態管理
+- `book.css`: 新增旅遊手冊風格樣式（雙欄式排版）
+- `other-pages.css`: 新增清單與提醒卡片樣式
+
+### **Version 2.1** (2026-01-04) - UI Contrast & Accessibility Refinements
+**改進項目：**
+- 深金色文字 (#8B7500) 提升價格資訊對比度
+- 多層次文字陰影增強可讀性
+- 視覺分隔與梯度背景優化
+- NBA 徽章與一般日期徽章對比度調整
+
+---
+
 **Maintained By**: AI Assistant (Claude)
