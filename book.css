@@ -1,4 +1,4 @@
-/* 翻書模式樣式 */
+/* 翻書模式樣式 - 旅遊手冊風格 */
 
 /* 翻書容器 - 全屏覆蓋 */
 .book-viewer {
@@ -7,15 +7,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(43, 49, 59, 0.95);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(43, 49, 59, 0.97) 0%, rgba(58, 91, 117, 0.95) 100%);
+    backdrop-filter: blur(15px);
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
 }
 
 .book-viewer.active {
@@ -26,28 +26,29 @@
 /* 書籍容器 */
 .book-container {
     position: relative;
-    width: 90%;
-    max-width: 900px;
-    height: 85vh;
-    max-height: 800px;
+    width: 92%;
+    max-width: 1100px;
+    height: 88vh;
+    max-height: 850px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-/* 書頁 */
+/* 書頁 - 雜誌風格 */
 .book-page {
-    background: linear-gradient(135deg, var(--glossy-silk) 0%, var(--ecru) 100%);
-    border-radius: 20px;
+    background: linear-gradient(135deg, #FEFDFB 0%, var(--ecru) 50%, #FEFDFB 100%);
+    border-radius: 12px;
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(145, 123, 109, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    padding: 40px;
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(145, 123, 109, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 0 40px rgba(235, 230, 216, 0.3);
+    padding: 0;
     height: 100%;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -55,62 +56,257 @@
 
 /* 翻頁動畫 */
 .book-page.page-flip {
-    transform: rotateY(10deg) scale(0.95);
-    opacity: 0.7;
+    transform: rotateY(8deg) scale(0.96);
+    opacity: 0.8;
 }
 
-/* 頁面標題區 */
+/* 頁面標題區 - 旅遊手冊風格 */
 .page-header {
-    border-bottom: 3px solid var(--tetsukon);
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--tetsukon) 0%, var(--mavs-navy-blue) 100%);
+    padding: 30px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
 }
 
 .page-title {
-    font-size: 2em;
-    font-weight: bold;
-    color: var(--tetsukon);
+    font-size: 2.2em;
+    font-weight: 800;
+    color: white;
     margin-bottom: 8px;
-    text-shadow: 0 2px 4px rgba(58, 91, 117, 0.1);
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.3),
+        0 4px 16px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
 }
 
 .page-date {
-    font-size: 1.1em;
-    color: var(--warm-gray);
+    font-size: 1.15em;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
 }
 
-/* 頁面內容區 */
+/* 頁面內容區 - 雙欄佈局 */
 .page-content {
     flex: 1;
     overflow-y: auto;
-    padding-right: 10px;
+    padding: 35px 40px 25px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(235, 230, 216, 0.2) 100%);
+}
+
+/* 時間軸容器 - 改為表格式佈局 */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* 時間軸項目 - 雙欄設計 */
+.timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 25px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(145, 123, 109, 0.15);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    background: rgba(181, 202, 160, 0.08);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-radius: 12px;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+/* 時間欄 - 左側 */
+.timeline-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 3px;
+}
+
+.time-text {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--tetsukon);
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, rgba(58, 91, 117, 0.1), rgba(108, 132, 157, 0.1));
+    padding: 6px 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--tetsukon);
+    white-space: nowrap;
+}
+
+.time-circle {
+    display: none; /* 隱藏原本的圓點 */
+}
+
+/* 時間軸線 - 隱藏 */
+.timeline-line {
+    display: none;
+}
+
+/* 內容欄 - 右側 */
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timeline-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--charcoal-blue);
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timeline-title .basketball-icon {
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: middle;
+}
+
+.timeline-desc {
+    color: var(--warm-gray);
+    font-size: 1em;
+    line-height: 1.7;
+    margin-top: 5px;
+}
+
+.timeline-desc strong {
+    color: var(--charcoal-blue);
+    font-weight: 700;
+}
+
+.timeline-desc .basketball-icon.tiny {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.timeline-price {
+    color: #8B7500;
+    font-weight: 700;
+    font-size: 1em;
+    background: rgba(184, 150, 10, 0.12);
+    padding: 8px 14px;
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 3px solid #B8960A;
+    margin-top: 5px;
+    max-width: fit-content;
+}
+
+/* NBA 特殊樣式 */
+.nba-timeline-item {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.08), rgba(255, 140, 0, 0.05));
+    border-left: 4px solid #FFA500;
+    padding-left: 20px !important;
+    margin-left: -24px;
+    border-radius: 12px;
+}
+
+.nba-timeline-item .time-text {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 140, 0, 0.15));
+    border-left-color: #FFA500;
+    color: #CC6600;
+}
+
+.nba-timeline-item:hover {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.12), rgba(255, 140, 0, 0.08));
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.15);
+}
+
+/* 返程特殊樣式 */
+.return-timeline-item {
+    background: linear-gradient(135deg, rgba(149, 163, 200, 0.08), rgba(95, 103, 128, 0.05));
+    border-left: 4px solid var(--wisteria-gray);
+    padding-left: 20px !important;
+    margin-left: -24px;
+    border-radius: 12px;
+}
+
+.return-timeline-item .time-text {
+    background: linear-gradient(135deg, rgba(149, 163, 200, 0.2), rgba(149, 163, 200, 0.15));
+    border-left-color: var(--wisteria-gray);
+    color: #5F6780;
 }
 
 /* 自定義滾動條 */
 .page-content::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 .page-content::-webkit-scrollbar-track {
-    background: rgba(145, 123, 109, 0.1);
-    border-radius: 4px;
+    background: rgba(235, 230, 216, 0.3);
+    border-radius: 5px;
+    margin: 10px 0;
 }
 
 .page-content::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--walnut) 0%, var(--warm-gray) 100%);
-    border-radius: 4px;
+    background: linear-gradient(180deg, var(--tetsukon) 0%, var(--nando) 100%);
+    border-radius: 5px;
+    border: 2px solid rgba(254, 253, 251, 0.5);
 }
 
 .page-content::-webkit-scrollbar-thumb:hover {
-    background: var(--tetsukon);
+    background: linear-gradient(180deg, var(--mavs-navy-blue) 0%, var(--tetsukon) 100%);
 }
 
 /* 頁腳 */
 .page-footer {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px solid rgba(145, 123, 109, 0.2);
+    padding: 25px 40px;
+    background: linear-gradient(to top, rgba(235, 230, 216, 0.4) 0%, transparent 100%);
+    border-top: 2px solid rgba(145, 123, 109, 0.15);
+}
+
+.day-budget-footer {
+    background: linear-gradient(135deg, var(--wisteria-gray), var(--charcoal-blue));
+    padding: 18px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    box-shadow:
+        0 6px 20px rgba(149, 163, 200, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.budget-amount-large {
+    font-size: 1.6em;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 /* 導航按鈕 */
@@ -120,32 +316,36 @@
     transform: translateY(-50%);
     background: linear-gradient(135deg, var(--nando), var(--tetsukon));
     border: none;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     color: white;
-    font-size: 1.5em;
+    font-size: 1.6em;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(58, 91, 117, 0.4);
+    box-shadow:
+        0 6px 20px rgba(58, 91, 117, 0.5),
+        0 0 0 4px rgba(255, 255, 255, 0.1);
     z-index: 10;
 }
 
 .book-nav:hover {
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(58, 91, 117, 0.6);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow:
+        0 8px 28px rgba(58, 91, 117, 0.7),
+        0 0 0 6px rgba(255, 255, 255, 0.15);
 }
 
 .book-nav:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: translateY(-50%) scale(1);
 }
 
 .book-nav-prev {
-    left: -80px;
+    left: -90px;
 }
 
 .book-nav-next {
-    right: -80px;
+    right: -90px;
 }
 
 .book-nav span {
@@ -156,44 +356,71 @@
 /* 關閉按鈕 */
 .book-close {
     position: absolute;
-    top: -50px;
+    top: -60px;
     right: 0;
     background: linear-gradient(135deg, #D7C4BB, #B5CAA0);
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     color: var(--charcoal-blue);
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: bold;
     line-height: 1;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(215, 196, 187, 0.4);
+    box-shadow:
+        0 4px 15px rgba(215, 196, 187, 0.5),
+        0 0 0 4px rgba(255, 255, 255, 0.1);
 }
 
 .book-close:hover {
-    transform: rotate(90deg) scale(1.1);
-    box-shadow: 0 6px 20px rgba(215, 196, 187, 0.6);
+    transform: rotate(90deg) scale(1.15);
+    box-shadow:
+        0 6px 22px rgba(215, 196, 187, 0.7),
+        0 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
 /* 頁碼指示器 */
 .book-indicator {
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, var(--wisteria-gray), var(--charcoal-blue));
     color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-size: 1em;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(149, 163, 200, 0.4);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.05em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow:
+        0 4px 15px rgba(149, 163, 200, 0.5),
+        0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
 /* 響應式設計 */
+@media (max-width: 1200px) {
+    .book-nav-prev {
+        left: -75px;
+    }
+
+    .book-nav-next {
+        right: -75px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .book-container {
+        max-width: 900px;
+    }
+
+    .book-nav {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4em;
+    }
+
     .book-nav-prev {
         left: -70px;
     }
@@ -201,24 +428,61 @@
     .book-nav-next {
         right: -70px;
     }
+
+    .page-header {
+        padding: 25px 30px;
+    }
+
+    .page-content {
+        padding: 28px 30px 20px;
+    }
+
+    .page-footer {
+        padding: 20px 30px;
+    }
 }
 
 @media (max-width: 768px) {
     .book-container {
-        width: 95%;
-        height: 90vh;
+        width: 96%;
+        height: 92vh;
         gap: 10px;
     }
 
     .book-page {
-        padding: 25px 20px;
+        border-radius: 10px;
+    }
+
+    .page-header {
+        padding: 22px 25px;
     }
 
     .page-title {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 
     .page-date {
+        font-size: 1em;
+    }
+
+    .page-content {
+        padding: 25px 22px 18px;
+    }
+
+    /* 時間軸改為單欄 */
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 18px 0;
+    }
+
+    .timeline-time {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .time-text {
         font-size: 1em;
     }
 
@@ -226,49 +490,87 @@
     .book-nav {
         width: 50px;
         height: 50px;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .book-nav-prev {
-        left: 10px;
+        left: 12px;
     }
 
     .book-nav-next {
-        right: 10px;
+        right: 12px;
     }
 
     .book-close {
-        top: -45px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.8em;
+        top: -50px;
+        width: 48px;
+        height: 48px;
+        font-size: 2em;
     }
 
     .book-indicator {
-        bottom: -45px;
-        padding: 8px 20px;
-        font-size: 0.9em;
+        bottom: -50px;
+        padding: 10px 24px;
+        font-size: 0.95em;
+    }
+
+    .page-footer {
+        padding: 18px 22px;
+    }
+
+    .day-budget-footer {
+        padding: 15px 20px;
+        font-size: 0.95em;
+    }
+
+    .budget-amount-large {
+        font-size: 1.4em;
     }
 }
 
 @media (max-width: 480px) {
-    .book-page {
-        padding: 20px 15px;
-        border-radius: 15px;
+    .page-header {
+        padding: 20px;
     }
 
     .page-title {
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
-    .page-header {
-        padding-bottom: 15px;
-        margin-bottom: 20px;
+    .page-date {
+        font-size: 0.95em;
+    }
+
+    .page-content {
+        padding: 20px 18px 15px;
+    }
+
+    .timeline-item {
+        padding: 15px 0;
+    }
+
+    .timeline-title {
+        font-size: 1.1em;
+    }
+
+    .timeline-desc {
+        font-size: 0.95em;
+    }
+
+    .timeline-price {
+        font-size: 0.95em;
+        padding: 7px 12px;
     }
 
     .book-nav {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1em;
+        width: 46px;
+        height: 46px;
+        font-size: 1.2em;
+    }
+
+    .nba-timeline-item,
+    .return-timeline-item {
+        margin-left: -18px;
+        padding-left: 18px !important;
     }
 }
