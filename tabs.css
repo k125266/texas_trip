@@ -224,7 +224,7 @@
     margin-bottom: 30px;
     box-shadow: 0 8px 24px var(--shadow-color);
     border: 3px solid var(--walnut);
-    min-height: 500px;
+    min-height: 320px;
 }
 
 .stats-bg {
@@ -508,7 +508,7 @@
 
     /* 統計數據英雄區塊 */
     .stats-hero {
-        min-height: 400px;
+        min-height: 280px;
     }
     .stats-overlay {
         padding: 40px 25px;
@@ -627,7 +627,7 @@
 
     /* 統計數據英雄區塊 */
     .stats-hero {
-        min-height: 350px;
+        min-height: 250px;
         border-radius: 20px;
     }
     .stats-overlay {
